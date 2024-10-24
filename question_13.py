@@ -42,6 +42,7 @@ if valid_number:
             i += 1
         elif roman[i] == "L":
             integer_number += values["L"]
+            i += 1
         elif roman[i] == "X" and roman[i + 1] == "C":
             integer_number += (values["C"] - values["X"])
             i += 2
@@ -64,6 +65,6 @@ if valid_number:
             integer_number += values["I"]
             i += 1
         else:
-            i+=1
+            i += 1
 
 print(integer_number)
