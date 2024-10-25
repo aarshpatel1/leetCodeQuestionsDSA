@@ -1,4 +1,4 @@
-# question - 4 (find the median of 2 arrays)
+# question - 4 (find the median of 2 arrays) [HARD]
 array1 = input("Enter the numbers in Array 1: ").split(" ")
 array2 = input("Enter the numbers in Array 2: ").split(" ")
 
