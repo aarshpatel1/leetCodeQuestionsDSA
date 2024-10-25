@@ -1,4 +1,8 @@
+# question - 20 (Valid Parentheses)
+
 parentheses = input("Enter the parentheses only: ")
+
+parentheses = [i for i in parentheses]
 
 
 def check_closing(opening, index):
@@ -19,21 +23,17 @@ def check_closing(opening, index):
 def check_parentheses(s):
     openings = ["(", "{", "["]
     closings = [")", "}", "]"]
-    if len(s) == 1 or s[len(s) - 1] in openings:
+    if len(s) == 1 or s[0] in closings:
         return False
     else:
         for i in range(len(s) - 1):
-            if s[i] == "(" and s[i + 1] != ")" and s[i + 1] in closings:
-                return False
-            elif s[i] == "{" and s[i + 1] != "}" and s[i + 1] in closings:
-                return False
-            elif s[i] == "[" and s[i + 1] != "]" and s[i + 1] in closings:
-                return False
+            if s[i] in openings and s[i + 1] in closings:
+                if openings.index(s[i]) != closings.index(s[i + 1]):
+                    return False
             else:
                 if not check_closing(s[i], i):
                     return False
-
-        return True
+    return True
 
 
 print(check_parentheses(parentheses))
