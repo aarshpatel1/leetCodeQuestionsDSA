@@ -1,4 +1,4 @@
-# question - 20 (valid parenthesis) [EASY]
+# question - 20 (valid parenthesis) [EASY] result = 100%
 brackets_string = array1 = input("Enter the parenthesis: ")
 
 
