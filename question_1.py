@@ -1,4 +1,5 @@
-# question - 1 (find the index of numbers which total is equal to target
+# question - 1 (find the index of numbers which total is equal to target) [EASY]
+
 array = input("Enter the numbers: ").split(" ")
 number = [int(i) for i in array]
 target = int(input("Enter the total you want: "))

@@ -1,4 +1,4 @@
-# question - 2
+# question - 2 [NOT COMPLETED YET]
 array1 = input("Enter the numbers in Array 1: ").split(" ")
 array2 = input("Enter the numbers in Array 2: ").split(" ")
 answer = []

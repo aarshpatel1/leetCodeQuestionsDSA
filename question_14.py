@@ -1,4 +1,4 @@
-# question - 14 (Longest common prefix)
+# question - 14 (Longest common prefix) [EASY]
 
 words = input("Enter the words: ").split(" ")
 print(words)

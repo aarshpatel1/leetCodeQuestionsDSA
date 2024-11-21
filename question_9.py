@@ -1,4 +1,4 @@
-# question - 9 (check palindrome number)
+# question - 9 (check palindrome number) [EASY]
 
 number = int(input("Enter the number: "))
 
