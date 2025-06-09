@@ -1,4 +1,4 @@
-# question - 58 (Length of Last Word) [EASY]
+# question - 58 (Length of Last Word) [EASY] result = 100%
 
 def lengthOfLastWord(s):
     # print(f"The last word is \"{s.split()[-1]}\" with length {len(s.split()[-1])}.")
