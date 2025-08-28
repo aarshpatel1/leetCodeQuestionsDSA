@@ -1,4 +1,6 @@
-# question - 2 [NOT COMPLETED YET]
+# question - 2 (add two numbers) [MEDIUM]
+# there is a problem showing in leetcode but not in local machine that linklist does not find length using len()
+
 array1 = input("Enter the numbers in Array 1: ").split(" ")
 array2 = input("Enter the numbers in Array 2: ").split(" ")
 answer = []
@@ -8,38 +10,44 @@ def int_numbers(array):
     return [int(i) for i in array]
 
 
-def reverse_array(array):
-    new_array = []
-    for n in range(len(array) - 1, -1, -1):
-        new_array.append(array[n])
-    return new_array
+def addTwoNumbers(l1, l2):
+    if len(l1) != len(l2):
+        add_zeros = len(l1) - len(l2)
+        if add_zeros > 0:
+            for i in range(add_zeros):
+                l2.append(0)
+        else:
+            for i in range(add_zeros):
+                l1.append(0)
 
+    sum_array = []
+    reminder = 0
+    addition = 0
+    for i in range(len(l1)):
+        total_of_2_numbers = l1[i] + l2[i] + addition
+        if total_of_2_numbers >= 10:
+            addition = 0
+            reminder = total_of_2_numbers % 10
+            sum_array.append(reminder + addition)
+            addition += 1
+            reminder = 0
+        else:
+            sum_array.append(total_of_2_numbers)
 
-def count_extra(n):
-    count = 0
-    while n >= 10:
-        n -= 10
-        count += 1
-    return count
+    if addition != 0 and sum_array[-1] == 0:
+        sum_array.append(addition)
 
+    return sum_array
 
-count_extra(42)
 
 array1 = int_numbers(array1)
-array1 = reverse_array(array1)
-
 array2 = int_numbers(array2)
-array2 = reverse_array(array2)
 
 print(array1)
 print(array2)
 
-if len(array1) == len(array2):
-    for i in range(len(array1)):
-        if array1[i] + array2[i] < 10:
-            answer.append(array1[i] + array2[i])
-        else:
-            calculation = array1[i] + array2[i] - count_extra(array1[i] + array2[i])
-            answer.append(calculation)
+print(addTwoNumbers(array1, array2))
 
-print(answer)
+# print(addTwoNumbers([2, 4, 3], [5, 6, 4]))
+# print(addTwoNumbers([0], [0]))
+# print(addTwoNumbers([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9]))
