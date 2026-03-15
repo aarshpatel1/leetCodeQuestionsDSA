@@ -1,4 +1,4 @@
-# question 7 (reverse integer)
+# question 7 (reverse integer) [medium]
 
 def reverse_number(x):
     is_negative = False
