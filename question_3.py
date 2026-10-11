@@ -1,17 +1,38 @@
 # question - 3 (longest substring without repeating characters)
+# runtime - 167 ms and beats 93.42%
 
-s = input("Enter the string: ")
-
-
-def length_of_longest_substring(s):
-    empty_string = ""
+def lengthOfLongestSubstring(s):
+    past = ""
+    current = ""
     for i in s:
-        if i not in empty_string:
-            empty_string += i
+        if i not in current:
+            current += i
         else:
-            empty_string = ""
+            if current.find(i) >= 0:
+                # new_current = ""
+                # for j in range(current.find(i) + 1, len(current)):
+                #     new_current += current[j]
+                new_current = current[current.find(i)+1:]
+                new_current += i
+                if len(past) < len(current):
+                    past = current
+                current = new_current
+            elif len(past) < len(current):
+                past = current
+                current = i
 
-    return empty_string
+    # print("past:\t\t" +past)
+    # print("current:\t"+current)
+
+    if len(past) > len(current):
+        print("answer is past string: " + s + " = " + past)
+        return len(past)
+    print("answer is current string: " + s + " = " + current)
+    return len(current)
 
 
-print(length_of_longest_substring(s=s))
+lengthOfLongestSubstring("abcabcbb")
+lengthOfLongestSubstring("bbbbb")
+lengthOfLongestSubstring("pwwkew")
+lengthOfLongestSubstring("1R1TS")
+lengthOfLongestSubstring("7stsUB")
